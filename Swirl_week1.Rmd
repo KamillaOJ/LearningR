@@ -1,0 +1,80 @@
+---
+title: "Swirl_week1"
+author: "Kamilla"
+date: "10/09/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+# SWIRL
+## general information on how to use swirl:
+| You can exit swirl and return to the R prompt (>) at any time by pressing the Esc key. If you are already at the prompt,
+| type bye() to exit and save your progress. When you exit properly, you'll see a short message letting you know you've done
+| so.
+
+| When you are at the R prompt (>):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore what you do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.
+
+| If at any point you'd like more information on a particular topic related to R, you can type help.start() at the prompt,
+| which will open a menu of resources (either within RStudio or your default web browser, depending on your setup).
+| Alternatively, a simple web search often yields the answer you're looking for.
+
+## what arguments can a function take?
+Using the args() function on a function name is also a handy way to see what arguments a function can take.
+
+## making a nested directory
+Create a directory in the current working directory called "testdir2" and a subdirectory for it called "testdir3", all
+| in one command by using dir.create() and file.path().
+```{r}
+dir.create(file.path('testdir2', 'testdir3'), recursive = TRUE)
+```
+
+##Vectors
+
+| The `<` and `>=` symbols in these examples are called 'logical operators'. Other logical operators include `>`,
+| `<=`, `==` for exact equality, and `!=` for inequality.
+The same as in Python
+
+| If we have two logical expressions, A and B, we can ask whether at least one is TRUE with A | B (logical 'or'
+| a.k.a. 'union') or whether they are both TRUE with A & B (logical 'and' a.k.a. 'intersection'). Lastly, !A is
+| the negation of A and is TRUE when A is FALSE and vice versa.
+
+
+### combine charachters in a vector
+| Type paste(my_char, collapse = " ") now. Make sure there's a space between the double quotes in the `collapse`
+| argument. You'll see why in a second.
+
+| In the simplest case, we can join two character vectors that are each of length 1 (i.e. join two words). Try
+| paste("Hello", "world!", sep = " "), where the `sep` argument tells R that we want to separate the joined
+| elements with a single space.
+
+
