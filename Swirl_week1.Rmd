@@ -77,4 +77,23 @@ The same as in Python
 | paste("Hello", "world!", sep = " "), where the `sep` argument tells R that we want to separate the joined
 | elements with a single space.
 
+## Subsetting vectors
+ Recall that `!` gives us the negation of a logical expression, so !is.na(x) can be read as 'is not NA'.
+| Therefore, if we want to create a vector called y that contains all of the non-NA values from x, we can use
+y <- x[!is.na(x)]. Give it a try.
+```{r}
+y <- x[!is.na(x)]
+```
+
+To get all positive values without NA, and the best way to solve the problem:
+```{r}
+x[!is.na(x) & x > 0]
+```
+
+## to get all values except some:
+Luckily, R accepts negative integer indexes. Whereas x[c(2, 10)] gives us ONLY the 2nd and 10th elements of x,
+| x[c(-2, -10)] gives us all elements of x EXCEPT for the 2nd and 10 elements.  Try x[c(-2, -10)] now to see this.
+
+ A shorthand way of specifying multiple negative numbers is to put the negative sign out in front of the vector
+| of positive numbers. Type x[-c(2, 10)] to get the exact same result.
 
