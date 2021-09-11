@@ -97,3 +97,10 @@ Luckily, R accepts negative integer indexes. Whereas x[c(2, 10)] gives us ONLY t
  A shorthand way of specifying multiple negative numbers is to put the negative sign out in front of the vector
 | of positive numbers. Type x[-c(2, 10)] to get the exact same result.
 
+## Dataframes
+To assign column names to a DF:
+```{r}
+cnames <- c("patient", "age", "weight", "bp", "rating", "test")
+colnames(my_data) <- cnames
+```
+
