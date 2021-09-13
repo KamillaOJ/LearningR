@@ -1,0 +1,70 @@
+---
+title: "Swirl_week2"
+author: "Kamilla"
+date: "11/09/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Swirl week 2 coursera R programming
+## Section 8: Logic
+
+checking the opposite of whether 5 is equal to 7:
+```{r}
+print(!(5 == 7))
+```
+
+### AND &, OR |
+You can use the `&` operator to evaluate AND across a vector. The `&&` version of AND only evaluates the first member of a vector. Let's test both for practice. Type the expression TRUE & c(TRUE, FALSE, FALSE).
+
+Logical operators can be chained together just like arithmetic operators. The expressions: `6 != 10 && FALSE && 1 >= 2` or `TRUE || 5 < 9.3 || FALSE` are perfectly normal to see.
+
+As you may recall, arithmetic has an order of operations and so do logical expressions. All AND operators are evaluated before OR operators. Let's look at an example of an ambiguous case. Type: 5 > 8 || 6 != 8 && 4 > 3.9
+
+You should also be aware of the xor() function, which takes two arguments. The xor() function stands for exclusive OR. If one argument evaluates to TRUE and one argument evaluates to FALSE, then this function will return TRUE, otherwise it will return FALSE. Try out the xor() function by typing: xor(5 == 6, !FALSE)
+
+### Logical vectors:
+
+```{r}
+ints <- sample(10)
+ints > 5
+```
+
+We can use the resulting logical vector to ask other questions about ints. The which() function takes a logical vector as an argument and returns the indices of the vector that are TRUE. For example which(c(TRUE, FALSE, TRUE)) would return the vector c(1, 3).
+
+```{r}
+which(ints > 7)
+```
+
+### ANY, ALL
+
+Like the which() function, the functions any() and all() take logical vectors as their argument. The any() function will return TRUE if one or more of the elements in the logical vector is TRUE. The all() function will return TRUE if every element in the logical vector is TRUE.
+
+
+## Section 9: Functions
+
+The mean() function takes a vector of numbers as input, and returns the average of all of the numbers in the input vector. Inputs to functions are often called arguments. Providing arguments to a function is also sometimes called passing arguments to that function. Arguments you want to pass to a function go inside the function's parentheses. Try passing the argument c(2, 4, 5) to the mean() function.
+
+**Practice**
+In the following question you will be asked to modify a script that will appear as soon as you move on from this question. When you have finished modifying the script, save your changes to the script and type submit() and the script will be evaluated. There will be some comments in the script that opens up, so be sure to read them!
+
+
+```{r}
+boring_function <- function(x) {
+  x
+}
+```
+
+Making your own binary operator
+```{r}
+"%p%" <- function(left, right){ 
+  paste(left, right)
+}
+```
+
+
+
+
